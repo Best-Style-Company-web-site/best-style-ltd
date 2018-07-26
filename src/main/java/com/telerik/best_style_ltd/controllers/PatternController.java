@@ -17,11 +17,10 @@ public class PatternController {
         this.patternService = patternService;
     }
 
-    @PostMapping("/add")
-    public String addPattern(Pattern pattern) {
-
+    @RequestMapping(value = "/add",
+    method = RequestMethod.POST)
+    public void addPattern(@RequestBody Pattern pattern) {
         this.patternService.addPattern( pattern );
-
-        return "add:/";
+       // return "add:/";
     }
 }
