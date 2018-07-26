@@ -38,6 +38,6 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public void removeUser(int id) {
-
+        userRepository.removeUser(id);
     }
 }

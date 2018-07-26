@@ -63,6 +63,14 @@ public class UserRepositoryImpl implements  UserRepository {
 
     @Override
     public void removeUser(int id) {
-
+        User user = null;
+        try (Session session = factory.openSession()) {
+            session.beginTransaction();
+            user = session.get(User.class, id);
+            session.delete(user);
+            session.getTransaction().commit();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 }
