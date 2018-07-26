@@ -17,7 +17,7 @@ public class PatternServiceImpl implements PatternService{
 
     @Override
     public void addPattern(Pattern p) {
-
+     patternRepository.addPattern( p );
     }
 
     @Override
