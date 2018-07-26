@@ -39,6 +39,6 @@ public class PatternServiceImpl implements PatternService{
 
     @Override
     public void removePattern(int id) {
-
+     patternRepository.removePattern( id );
     }
 }
