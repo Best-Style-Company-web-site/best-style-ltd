@@ -8,7 +8,7 @@ public interface PatternRepository {
 
      void addPattern(Pattern p);
      void updatePattern(Pattern p);
-     List<Pattern> listPattern();
+     List<Pattern> listPatterns();
      Pattern getPatternById(int id);
      void removePattern(int id);
 
