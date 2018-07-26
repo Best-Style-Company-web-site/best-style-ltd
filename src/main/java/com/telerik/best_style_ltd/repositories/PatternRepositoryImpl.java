@@ -23,7 +23,7 @@ public class PatternRepositoryImpl implements PatternRepository{
     public void addPattern(Pattern pattern) {
         try (Session session = factory.openSession()) {
             session.beginTransaction();
-            pattern = new Pattern("Skirt", "Short", "42-48", "cotton", "Oksana Hristova", 10, 20);
+            //pattern = new Pattern("Skirt", "Short", "42-48", "cotton", "Oksana Hristova", 10, 20);
             session.save( pattern );
             session.getTransaction().commit();
         } catch (Exception e) {
@@ -52,7 +52,7 @@ public class PatternRepositoryImpl implements PatternRepository{
     @Override
     public Pattern getPatternById(int id) {
         Pattern pattern = null;
-        try (Session session = factory.openSession()) {
+        try (Session session = factory.openSession();) {
             session.beginTransaction();
             pattern = session.get(Pattern.class, id);
             session.getTransaction().commit();
