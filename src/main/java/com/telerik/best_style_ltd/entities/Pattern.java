@@ -35,6 +35,16 @@ public class Pattern {
     public Pattern() {
     }
 
+    public Pattern(String name, String description, String sizes, String material, String designer, double priceForOnePiece, double priceForBulkPieces) {
+        this.name = name;
+        this.description = description;
+        this.sizes = sizes;
+        this.material = material;
+        this.designer = designer;
+        this.priceForOnePiece = priceForOnePiece;
+        this.priceForBulkPieces = priceForBulkPieces;
+    }
+
     public int getId() {
         return id;
     }

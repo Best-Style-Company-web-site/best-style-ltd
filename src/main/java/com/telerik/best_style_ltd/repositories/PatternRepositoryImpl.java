@@ -23,7 +23,9 @@ public class PatternRepositoryImpl implements PatternRepository{
     public void addPattern(Pattern pattern) {
         try (Session session = factory.openSession()) {
             session.beginTransaction();
+            pattern = new Pattern("Skirt", "Short", "42-48", "cotton", "Oksana Hristova", 10, 20);
             session.save( pattern );
+
             session.getTransaction().commit();
         } catch (Exception e) {
             System.out.println(e.getMessage());
