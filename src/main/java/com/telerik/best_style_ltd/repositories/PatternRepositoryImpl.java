@@ -39,15 +39,15 @@ public class PatternRepositoryImpl implements PatternRepository{
 
     @Override
     public List<Pattern> listPatterns() {
-        List<Pattern> employees = new ArrayList<>();
+        List<Pattern> patterns = new ArrayList<>();
         try (Session session = factory.openSession()) {
             session.beginTransaction();
-            employees = session.createQuery("from Pattern").list();
+            patterns = session.createQuery("from Pattern").list();
             session.getTransaction().commit();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        return employees;
+        return patterns;
     }
 
     @Override
