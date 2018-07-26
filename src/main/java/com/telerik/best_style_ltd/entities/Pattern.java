@@ -27,17 +27,17 @@ public class Pattern {
     @Column(name = "designer", nullable = false)
     private String designer;
 
-    @Column(name = "price_for_one_iece", nullable = false)
+    @Column(name = "price_for_one_piece", nullable = false)
     private double priceForOnePiece;
 
-    @Column(name = "price_for_bulk_pieces", nullable = false)
+    @Column(name = "bulk_price", nullable = false)
     private double priceForBulkPieces;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "patterns_users",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "pattern_id"))
-    private List<User> users;
+//    @ManyToMany(fetch = FetchType.EAGER)
+//    @JoinTable(name = "patterns_users",
+//            joinColumns = @JoinColumn(name = "user_id"),
+//            inverseJoinColumns = @JoinColumn(name = "pattern_id"))
+//    private List<User> users;
 
     public Pattern() {
     }

@@ -5,6 +5,7 @@ import com.telerik.best_style_ltd.services.PatternService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import javax.validation.Valid;
 
 @RestController
@@ -17,10 +18,15 @@ public class PatternController {
         this.patternService = patternService;
     }
 
-    @RequestMapping(value = "/add",
-    method = RequestMethod.POST)
+    @PostMapping("/add")
     public void addPattern(@RequestBody Pattern pattern) {
         this.patternService.addPattern( pattern );
        // return "add:/";
+    }
+
+    @GetMapping("/{id}")
+    public Pattern getPatternById(@PathVariable("id") String id) {
+        return patternService.getPatternById( Integer.parseInt( id ) );
+
     }
 }

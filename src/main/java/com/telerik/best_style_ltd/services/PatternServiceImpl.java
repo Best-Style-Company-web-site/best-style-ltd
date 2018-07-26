@@ -34,7 +34,7 @@ public class PatternServiceImpl implements PatternService{
 
     @Override
     public Pattern getPatternById(int id) {
-        return null;
+    return patternRepository.getPatternById( id );
     }
 
     @Override
