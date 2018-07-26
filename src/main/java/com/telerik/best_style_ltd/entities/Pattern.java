@@ -2,6 +2,7 @@ package com.telerik.best_style_ltd.entities;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "patterns")
@@ -26,11 +27,17 @@ public class Pattern {
     @Column(name = "designer", nullable = false)
     private String designer;
 
-    @Column(name = "priceForOnePiece", nullable = false)
+    @Column(name = "price_for_one_iece", nullable = false)
     private double priceForOnePiece;
 
-    @Column(name = "priceForBulkPieces", nullable = false)
+    @Column(name = "price_for_bulk_pieces", nullable = false)
     private double priceForBulkPieces;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "patterns_users",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "pattern_id"))
+    private List<User> users;
 
     public Pattern() {
     }
