@@ -21,12 +21,16 @@ public class PatternController {
     @PostMapping("/add")
     public void addPattern(@RequestBody Pattern pattern) {
         this.patternService.addPattern( pattern );
-       // return "add:/";
     }
 
     @GetMapping("/{id}")
     public Pattern getPatternById(@PathVariable("id") String id) {
         return patternService.getPatternById( Integer.parseInt( id ) );
 
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void deletePattern(@PathVariable("id") String id) {
+        this.patternService.removePattern( Integer.parseInt( id ) );
     }
 }
