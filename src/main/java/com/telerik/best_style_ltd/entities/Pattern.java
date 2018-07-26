@@ -1,7 +1,6 @@
 package com.telerik.best_style_ltd.entities;
 
 
-
 import javax.persistence.*;
 
 @Entity
