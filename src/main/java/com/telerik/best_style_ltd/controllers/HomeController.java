@@ -8,11 +8,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping()
+@RequestMapping("/")
 public class HomeController {
 
     @GetMapping()
     public String createHomePage(Model model) {
         return "home";
+    }
+
+
+    @GetMapping("portfolio")
+    public String createPortfolioPage(Model model) {
+        return "portfolio";
     }
 }
