@@ -4,14 +4,15 @@ import com.telerik.best_style_ltd.entities.Pattern;
 import com.telerik.best_style_ltd.services.PatternService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("api/home")
+@RequestMapping()
 public class HomeController {
 
-    @GetMapping("/")
-    public String createHomePage() {
+    @GetMapping()
+    public String createHomePage(Model model) {
         return "home";
     }
 }
