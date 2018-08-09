@@ -33,7 +33,6 @@ public class PatternRepositoryImpl implements PatternRepository{
 
     @Override
     public void updatePattern(Pattern p) {
-
     }
 
     @Override
